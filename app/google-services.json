@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1071219089316",
+    "project_id": "quiz-master-1666457929330",
+    "storage_bucket": "quiz-master-1666457929330.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1071219089316:android:6085a39d821bbd50d0ab31",
+        "android_client_info": {
+          "package_name": "com.skappsstore.quizgame"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1071219089316-m6crk8v1ino2n9m79gfndejq8ci9gf9b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGD_sHjUsnTqrxClbND1wfI6P2Njola3w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1071219089316-m6crk8v1ino2n9m79gfndejq8ci9gf9b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
