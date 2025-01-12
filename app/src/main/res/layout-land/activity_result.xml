@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bgone"
+    tools:context=".activity.ResultActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/countCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="100dp"
+            android:layout_marginVertical="20dp"
+            app:cardCornerRadius="15dp">
+
+              <LinearLayout
+                  android:padding="@dimen/resultBoxPadding"
+                  android:layout_gravity="center"
+                  android:gravity="center"
+                  android:orientation="horizontal"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent">
+
+
+                  <LinearLayout
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_gravity="center"
+                      android:gravity="center"
+                      android:orientation="vertical">
+
+                      <ImageView
+                          android:id="@+id/imgWinLoss"
+                          android:layout_width="120dp"
+                          android:layout_height="120dp"
+                          android:layout_marginBottom="10dp"
+                          android:contentDescription="@string/this_is_for_image_view"
+                          android:src="@drawable/winner" />
+
+                      <TextView
+                          android:id="@+id/txtWinLoss"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_marginBottom="5dp"
+                          android:text="@string/you_win"
+                          android:textAlignment="center"
+                          android:textColor="@color/purple_700"
+                          android:textSize="@dimen/resultLossWinTextSize"
+                          android:textStyle="bold" />
+
+                      <TextView
+                          android:id="@+id/txtLossTop"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_marginBottom="15dp"
+                          android:text="@string/better_luck_next_time"
+                          android:textAlignment="center"
+                          android:textColor="@color/purple_700"
+                          android:textSize="@dimen/resultLossWinTextSize"
+                          android:textStyle="bold"
+                          android:visibility="gone"
+                          />
+
+
+                      <TextView
+                          android:visibility="gone"
+                          android:id="@+id/extraTxtLoss"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_marginBottom="10dp"
+                          android:textSize="15sp"
+                          android:textAlignment="center"
+                          android:text="@string/need_at_least_60_to_win"
+                          />
+
+                      <RelativeLayout
+                          android:layout_width="match_parent"
+                          android:layout_height="match_parent">
+
+                          <LinearLayout
+                              android:id="@+id/resultLayer"
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:layout_marginTop="5dp"
+                              android:layout_marginBottom="10dp"
+                              android:baselineAligned="false"
+                              android:orientation="horizontal"
+                              android:weightSum="302">
+
+                              <LinearLayout
+                                  android:layout_width="0dp"
+                                  android:layout_height="wrap_content"
+                                  android:layout_weight="100"
+                                  android:orientation="vertical">
+
+                                  <TextView
+                                      android:id="@+id/txtResult"
+                                      android:layout_width="match_parent"
+                                      android:layout_height="wrap_content"
+                                      android:text="@string/demo_score"
+                                      android:textAlignment="center"
+                                      android:textColor="@color/black"
+                                      android:textSize="18sp"
+                                      android:textStyle="bold" />
+
+                                  <TextView
+                                      android:layout_width="match_parent"
+                                      android:layout_height="wrap_content"
+                                      android:text="@string/correct"
+                                      android:textAlignment="center"
+                                      android:textColor="@color/blackm"
+                                      android:textSize="15sp"
+                                      android:textStyle="bold" />
+
+                              </LinearLayout>
+
+                              <LinearLayout
+                                  android:layout_width="5dp"
+                                  android:layout_height="match_parent"
+                                  android:layout_gravity="center_vertical"
+                                  android:layout_weight="1"
+                                  android:gravity="center_vertical"
+                                  android:orientation="vertical">
+
+                                  <View
+                                      android:layout_width="2dp"
+                                      android:layout_height="30dp"
+                                      android:layout_gravity="center"
+                                      android:background="@color/blackm" />
+                              </LinearLayout>
+
+                              <LinearLayout
+                                  android:layout_width="0dp"
+                                  android:layout_height="wrap_content"
+                                  android:layout_weight="100"
+                                  android:orientation="vertical">
+
+                                  <TextView
+                                      android:id="@+id/txtSkipped"
+                                      android:layout_width="match_parent"
+                                      android:layout_height="wrap_content"
+                                      android:text="@string/demo_score"
+                                      android:textAlignment="center"
+                                      android:textColor="@color/black"
+                                      android:textSize="18sp"
+                                      android:textStyle="bold" />
+
+                                  <TextView
+                                      android:layout_width="match_parent"
+                                      android:layout_height="wrap_content"
+                                      android:text="@string/skipped"
+                                      android:textAlignment="center"
+                                      android:textColor="@color/blackm"
+                                      android:textSize="15sp"
+                                      android:textStyle="bold" />
+
+                              </LinearLayout>
+
+                              <LinearLayout
+                                  android:layout_width="5dp"
+                                  android:layout_height="match_parent"
+                                  android:layout_gravity="center_vertical"
+                                  android:layout_weight="1"
+                                  android:gravity="center_vertical"
+                                  android:orientation="vertical">
+
+                                  <View
+                                      android:layout_width="2dp"
+                                      android:layout_height="30dp"
+                                      android:background="@color/blackm" />
+                              </LinearLayout>
+
+                              <LinearLayout
+                                  android:layout_width="0dp"
+                                  android:layout_height="wrap_content"
+                                  android:layout_weight="100"
+                                  android:orientation="vertical">
+
+                                  <TextView
+                                      android:id="@+id/txtWrong"
+                                      android:layout_width="match_parent"
+                                      android:layout_height="wrap_content"
+                                      android:text="@string/demo_score"
+                                      android:textAlignment="center"
+                                      android:textColor="@color/black"
+                                      android:textSize="18sp"
+                                      android:textStyle="bold" />
+
+                                  <TextView
+                                      android:layout_width="match_parent"
+                                      android:layout_height="wrap_content"
+                                      android:text="@string/wrong"
+                                      android:textAlignment="center"
+                                      android:textColor="@color/blackm"
+                                      android:textSize="15sp"
+                                      android:textStyle="bold" />
+
+                              </LinearLayout>
+
+
+                          </LinearLayout>
+
+
+                          <LinearLayout
+                              android:gravity="center"
+                              android:layout_below="@+id/resultLayer"
+                              style="?android:attr/buttonBarStyle"
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:layout_marginTop="10dp"
+                              android:orientation="horizontal"
+                              android:paddingHorizontal="0dp">
+
+                              <androidx.appcompat.widget.AppCompatButton
+                                  android:id="@+id/btnPlayAgain"
+                                  android:layout_width="@dimen/resultButtonSize"
+                                  android:layout_height="wrap_content"
+                                  android:layout_marginEnd="7dp"
+                                  android:elevation="0dp"
+                                  android:background="@drawable/btn_bg"
+                                  android:text="@string/play_again"
+                                  android:textAlignment="center"
+                                  android:textAllCaps="false"
+                                  android:textColor="@color/white"
+                                  android:textSize="14sp"
+                                  android:textStyle="bold" />
+
+                              <androidx.appcompat.widget.AppCompatButton
+                                  android:id="@+id/btnHome"
+                                  android:layout_width="@dimen/resultButtonSize"
+                                  android:layout_height="wrap_content"
+                                  android:layout_marginStart="7dp"
+                                  android:elevation="0dp"
+                                  android:background="@drawable/btn_bg"
+                                  android:text="@string/go_to_home"
+                                  android:textAlignment="center"
+                                  android:textAllCaps="false"
+                                  android:textColor="@color/white"
+                                  android:textSize="14sp"
+                                  android:textStyle="bold" />
+
+
+                          </LinearLayout>
+
+                      </RelativeLayout>
+
+
+
+                  </LinearLayout>
+
+              </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>
