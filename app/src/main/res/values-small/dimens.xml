@@ -29,4 +29,11 @@
 
     <dimen name="categoryAdapter">140dp</dimen>
 
+    <!--  Quiz History Screen  -->
+    <dimen name="quizHistoryTitle">18sp</dimen>
+
+    <!--  Quiz Screen  -->
+    <dimen name="quizPauseIconSize">45dp</dimen>
+    <dimen name="quizTxtHintSize">15sp</dimen>
+
 </resources>

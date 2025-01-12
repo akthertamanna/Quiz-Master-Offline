@@ -12,6 +12,11 @@
         android:title="@string/title_Categories" />
 
     <item
+        android:id="@+id/navigation_quiz_result"
+        android:icon="@drawable/history_24"
+        android:title="@string/quiz_result" />
+
+    <item
         android:id="@+id/navigation_about"
         android:icon="@drawable/ic_baseline_help_24"
         android:title="@string/about" />

@@ -7,48 +7,35 @@
     android:layout_height="match_parent"
     android:background="@drawable/bgone"
     android:layout_marginTop="-5dp"
-    android:layout_marginLeft="-4dp"
-    android:layout_marginRight="-5dp"
+    android:layout_marginStart="-4dp"
+    android:layout_marginEnd="-5dp"
     android:layout_marginBottom="-5dp"
     tools:context=".activity.ResultActivity">
-
-    <RelativeLayout
-        android:id="@+id/resultAds"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"/>
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/countCard"
         android:layout_width="match_parent"
-        android:layout_height="520dp"
+        android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginVertical="20dp"
+        android:layout_margin="20dp"
         app:cardCornerRadius="15dp">
 
         <LinearLayout
+            android:padding="@dimen/resultBoxPadding"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/txtLossTop"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
-                android:text="Better Luck Next Time"
-                android:textColor="@color/purple_700"
-                android:textSize="30sp"
-                android:textStyle="bold"
-                android:visibility="gone" />
+
 
             <ImageView
                 android:id="@+id/imgWinLoss"
                 android:layout_width="180dp"
                 android:layout_height="180dp"
                 android:layout_marginBottom="10dp"
+                android:contentDescription="@string/this_is_for_image_view"
                 android:src="@drawable/winner" />
 
             <TextView
@@ -56,10 +43,23 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
-                android:text="You Win"
+                android:text="@string/you_win"
+                android:textAlignment="center"
                 android:textColor="@color/purple_700"
-                android:textSize="30sp"
+                android:textSize="@dimen/resultLossWinTextSize"
                 android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtLossTop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:textAlignment="center"
+                android:text="@string/better_luck_next_time"
+                android:textColor="@color/purple_700"
+                android:textSize="@dimen/resultLossWinTextSize"
+                android:textStyle="bold"
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/extraTxtLoss"
@@ -67,171 +67,182 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:textSize="15sp"
-                android:text="Need at least 60% to win"
+                android:textAlignment="center"
+                android:text="@string/need_at_least_60_to_win"
                 android:visibility="gone" />
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="10dp"
-                android:orientation="horizontal"
-                android:weightSum="302">
+                android:layout_height="wrap_content">
 
                 <LinearLayout
-                    android:layout_width="0dp"
+                    android:id="@+id/resultLayer"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="100"
-                    android:orientation="vertical">
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal"
+                    android:weightSum="302">
 
-                    <TextView
-                        android:id="@+id/txtResult"
-                        android:layout_width="match_parent"
+                    <LinearLayout
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="1/11"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="22sp"
-                        android:textStyle="bold" />
+                        android:layout_weight="100"
+                        android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="match_parent"
+                        <TextView
+                            android:id="@+id/txtResult"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/demo_score"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/resultTextSize"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/correct"
+                            android:textAlignment="center"
+                            android:textColor="@color/blackm"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="5dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:background="@color/blackm" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="Correct"
-                        android:textAlignment="center"
-                        android:textColor="@color/blackm"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
+                        android:layout_weight="100"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txtSkipped"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/demo_score"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/resultTextSize"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/skipped"
+                            android:textAlignment="center"
+                            android:textColor="@color/blackm"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="5dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="30dp"
+                            android:background="@color/blackm" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="100"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txtWrong"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/demo_score"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/resultTextSize"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/wrong"
+                            android:textAlignment="center"
+                            android:textColor="@color/blackm"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
 
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="5dp"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center_vertical"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:orientation="vertical">
-
-                    <View
-                        android:layout_width="2dp"
-                        android:layout_height="30dp"
-                        android:layout_gravity="center"
-                        android:background="@color/blackm" />
-                </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="0dp"
+                    android:gravity="center"
+                    android:layout_below="@+id/resultLayer"
+                    style="?android:attr/buttonBarStyle"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="100"
-                    android:orientation="vertical">
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="0dp">
 
-                    <TextView
-                        android:id="@+id/txtSkipped"
-                        android:layout_width="match_parent"
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnPlayAgain"
+                        android:layout_width="@dimen/resultButtonSize"
                         android:layout_height="wrap_content"
-                        android:text="1/11"
+                        android:layout_marginEnd="5dp"
+                        android:elevation="0dp"
+                        android:background="@drawable/btn_bg"
+                        android:text="@string/play_again"
                         android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="22sp"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
                         android:textStyle="bold" />
 
-                    <TextView
-                        android:layout_width="match_parent"
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnHome"
+                        android:layout_width="@dimen/resultButtonSize"
                         android:layout_height="wrap_content"
-                        android:text="Not Attempt"
+                        android:layout_marginStart="5dp"
+                        android:elevation="0dp"
+                        android:background="@drawable/btn_bg"
+                        android:text="@string/go_to_home"
                         android:textAlignment="center"
-                        android:textColor="@color/blackm"
-                        android:textSize="15sp"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
                         android:textStyle="bold" />
 
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="5dp"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center_vertical"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:orientation="vertical">
-
-                    <View
-                        android:layout_width="2dp"
-                        android:layout_height="30dp"
-                        android:background="@color/blackm" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="100"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/txtWrong"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="1/11"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="22sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Wrong"
-                        android:textAlignment="center"
-                        android:textColor="@color/blackm"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
 
                 </LinearLayout>
 
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:orientation="horizontal"
-                android:paddingHorizontal="20dp"
-                android:weightSum="2">
-
-                <Button
-                    android:id="@+id/btnPlayAgin"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="5dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/btn_bg"
-                    android:onClick="playAgin"
-                    android:text="Play Agin"
-                    android:textAlignment="center"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/btnHome"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/btn_bg"
-                    android:onClick="gotohome"
-                    android:text="Go T0 Home"
-                    android:textAlignment="center"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
+            </RelativeLayout>
 
 
-            </LinearLayout>
 
         </LinearLayout>
 

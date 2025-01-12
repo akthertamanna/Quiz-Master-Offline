@@ -20,57 +20,25 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
-#volley
--keep class com.android.volley.** { *; }
--keep class org.apache.commons.logging.**
-
--keepattributes *Annotation*
-
--dontwarn org.apache.**
-
-
-#glide
-
--keep public class * implements com.bumptech.glide.module.GlideModule
--keep class * extends com.bumptech.glide.module.AppGlideModule {
- <init>(...);
-}
--keep public enum com.bumptech.glide.load.ImageHeaderParser$** {
-  **[] $VALUES;
-  public *;
-}
--keep class com.bumptech.glide.load.data.ParcelFileDescriptorRewinder$InternalRewinder {
-  *** rewind();
-}
 
 # Picasso
 -dontwarn com.squareup.okhttp.**
 
--keep class com.skappsstore.quizmaster.helper.** { *; }
--keep class com.skappsstore.quizmaster.encapsu.** { *; }
+
+-keep class com.skappsstore.quizgame.utilities.** { *; }
+-keep class com.skappsstore.quizgame.model.** { *; }
 
 -keep class com.loopj.android.** { *; }
 -keep interface com.loopj.android.** { *; }
+
+
 -keep class cn.pedant.SweetAlert.** { *; }
 
 -keep class com.google.firebase.messaging.FirebaseMessaging
 
 
-
-
-
-
-
-
-
-
-
-
-# These 2 methods are called with reflection.
--keep class com.google.android.gms.common.api.GoogleApiClient {
-    void connect();
-    void disconnect();
-}
+# OneSignal - General
+-keep class com.onesignal.** {*;}  # Keep all OneSignal classes and members
 
 
 -keep class com.onesignal.ActivityLifecycleListenerCompat** {*;}
@@ -79,6 +47,7 @@
 -keep class com.onesignal.OSSubscriptionState {
     void changed(com.onesignal.OSPermissionState);
 }
+
 
 -keep class com.onesignal.OSPermissionChangedInternalObserver {
     void changed(com.onesignal.OSPermissionState);
@@ -104,6 +73,7 @@
     void onOSSubscriptionChanged(com.onesignal.OSSubscriptionStateChanges);
 }
 
+
 -keep class ** implements com.onesignal.OSEmailSubscriptionObserver {
     void onOSEmailSubscriptionChanged(com.onesignal.OSEmailSubscriptionStateChanges);
 }
@@ -112,39 +82,42 @@
     void onOSEmailSubscriptionChanged(com.onesignal.OSSMSSubscriptionStateChanges);
 }
 
--keep class com.onesignal.shortcutbadger.impl.AdwHomeBadger { <init>(...); }
--keep class com.onesignal.shortcutbadger.impl.ApexHomeBadger { <init>(...); }
--keep class com.onesignal.shortcutbadger.impl.AsusHomeBadger { <init>(...); }
--keep class com.onesignal.shortcutbadger.impl.DefaultBadger { <init>(...); }
--keep class com.onesignal.shortcutbadger.impl.EverythingMeHomeBadger { <init>(...); }
--keep class com.onesignal.shortcutbadger.impl.HuaweiHomeBadger { <init>(...); }
--keep class com.onesignal.shortcutbadger.impl.LGHomeBadger { <init>(...); }
--keep class com.onesignal.shortcutbadger.impl.NewHtcHomeBadger { <init>(...); }
--keep class com.onesignal.shortcutbadger.impl.NovaHomeBadger { <init>(...); }
--keep class com.onesignal.shortcutbadger.impl.OPPOHomeBader { <init>(...); }
--keep class com.onesignal.shortcutbadger.impl.SamsungHomeBadger { <init>(...); }
--keep class com.onesignal.shortcutbadger.impl.SonyHomeBadger { <init>(...); }
--keep class com.onesignal.shortcutbadger.impl.VivoHomeBadger { <init>(...); }
--keep class com.onesignal.shortcutbadger.impl.XiaomiHomeBadger { <init>(...); }
--keep class com.onesignal.shortcutbadger.impl.ZukHomeBadger { <init>(...); }
+
+-keep class * implements com.onesignal.notifications.IPermissionObserver{
+    void onNotificationPermissionChange(java.lang.Boolean);
+}
+
+-keep class * implements com.onesignal.user.subscriptions.IPushSubscriptionObserver {
+    void onPushSubscriptionChange(com.onesignal.user.subscriptions.PushSubscriptionChangedState);
+}
+
+-keep class com.onesignal.notifications.internal.badges.impl.shortcutbadger.impl.AdwHomeBadger { <init>(...); }
+-keep class com.onesignal.notifications.internal.badges.impl.shortcutbadger.impl.ApexHomeBadger { <init>(...); }
+-keep class com.onesignal.notifications.internal.badges.impl.shortcutbadger.impl.AsusHomeBadger { <init>(...); }
+-keep class com.onesignal.notifications.internal.badges.impl.shortcutbadger.impl.DefaultBadger { <init>(...); }
+-keep class com.onesignal.notifications.internal.badges.impl.shortcutbadger.impl.EverythingMeHomeBadger { <init>(...); }
+-keep class com.onesignal.notifications.internal.badges.impl.shortcutbadger.impl.HuaweiHomeBadger { <init>(...); }
+-keep class com.onesignal.notifications.internal.badges.impl.shortcutbadger.impl.LGHomeBadger { <init>(...); }
+-keep class com.onesignal.notifications.internal.badges.impl.shortcutbadger.impl.NewHtcHomeBadger { <init>(...); }
+-keep class com.onesignal.notifications.internal.badges.impl.shortcutbadger.impl.NovaHomeBadger { <init>(...); }
+-keep class com.onesignal.notifications.internal.badges.impl.shortcutbadger.impl.OPPOHomeBader { <init>(...); }
+-keep class com.onesignal.notifications.internal.badges.impl.shortcutbadger.impl.SamsungHomeBadger { <init>(...); }
+-keep class com.onesignal.notifications.internal.badges.impl.shortcutbadger.impl.SonyHomeBadger { <init>(...); }
+-keep class com.onesignal.notifications.internal.badges.impl.shortcutbadger.impl.VivoHomeBadger { <init>(...); }
+-keep class com.onesignal.notifications.internal.badges.impl.shortcutbadger.impl.XiaomiHomeBadger { <init>(...); }
+-keep class com.onesignal.notifications.internal.badges.impl.shortcutbadger.impl.ZukHomeBadger { <init>(...); }
+
 
 
 -dontwarn com.amazon.**
 
--dontwarn com.huawei.**
-
 # Proguard ends up removing this class even if it is used in AndroidManifest.xml so force keeping it.
--keep public class com.onesignal.ADMMessageHandler {*;}
-
--keep public class com.onesignal.ADMMessageHandlerJob {*;}
-
-# OSRemoteNotificationReceivedHandler is an interface designed to be extend then referenced in the
-#    app's AndroidManifest.xml as a meta-data tag.
-# This doesn't count as a hard reference so this entry is required.
--keep class ** implements com.onesignal.OneSignal$OSRemoteNotificationReceivedHandler {
-   void remoteNotificationReceived(android.content.Context, com.onesignal.OSNotificationReceivedEvent);
-}
+-keep public class com.onesignal.notifications.services.ADMMessageHandler {*;}
 
 -keep class com.onesignal.JobIntentService$* {*;}
+
+-keep class ** implements com.onesignal.notifications.INotificationServiceExtension{
+   void onNotificationReceived(com.onesignal.notifications.INotificationReceivedEvent);
+ }
 
 #-keep class com.onesignal.OneSignalUnityProxy {*;}

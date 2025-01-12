@@ -27,7 +27,7 @@
 
             <ImageView
                 android:id="@+id/btnClose"
-                android:layout_marginRight="-4dp"
+                android:layout_marginEnd="-4dp"
                 android:layout_marginTop="5dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -57,9 +57,10 @@
                app:layout_constraintStart_toStartOf="parent"
                android:background="@drawable/btn_bg"
                android:layout_marginTop="20dp"
-               android:layout_width="300dp"
+               android:layout_width="wrap_content"
+               android:minWidth="280dp"
                android:layout_height="wrap_content"
-               android:text="Beginner"/>
+               android:text="@string/beginner"/>
            <Button
                android:id="@+id/btnIntermediate"
                android:layout_marginTop="20dp"
@@ -67,9 +68,10 @@
                app:layout_constraintEnd_toEndOf="parent"
                app:layout_constraintStart_toStartOf="parent"
                android:background="@drawable/btn_bg"
-               android:layout_width="300dp"
+               android:layout_width="wrap_content"
+               android:minWidth="280dp"
                android:layout_height="wrap_content"
-               android:text="Intermediate"/>
+               android:text="@string/intermediate"/>
            <Button
                android:id="@+id/btnAdvance"
                android:layout_marginTop="20dp"
@@ -77,9 +79,10 @@
                app:layout_constraintEnd_toEndOf="parent"
                app:layout_constraintStart_toStartOf="parent"
                android:background="@drawable/btn_bg"
-               android:layout_width="300dp"
+               android:layout_width="wrap_content"
+               android:minWidth="280dp"
                android:layout_height="wrap_content"
-               android:text="Advance"/>
+               android:text="@string/advance"/>
 
 
 

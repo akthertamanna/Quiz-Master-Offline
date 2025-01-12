@@ -23,8 +23,9 @@
 
     <!--   Home  -->
     <dimen name="size_of_slider_in_home">150dp</dimen>
+    <dimen name="noCategoryFoundTxtMinHeight">100dp</dimen>
 
-    <!--  Category Home  -->
+    <!--  Home Category  -->
     <dimen name="categoryHomeAdapter">90dp</dimen>
     <dimen name="categoryHomeAdapterTitle">15sp</dimen>
 
@@ -33,12 +34,31 @@
     <dimen name="adapterSubTitle">16sp</dimen>
 
 
-
-
-
     <!--  Category Main  -->
+    <dimen name="categoryAdapterMainMargin">0dp</dimen>
+
     <dimen name="categoryAdapter">140dp</dimen>
     <dimen name="adapterCategoryTitle">20sp</dimen>
+
+    <!--  Quiz Screen  -->
+    <dimen name="quizPauseIconSize">45dp</dimen>">
+
+    <dimen name="quizTxtHintSize">15sp</dimen>">
+
+    <!--  Quiz History Screen  -->
+    <dimen name="quizHistoryTitle">20sp</dimen>">
+
+
+    <!--  Result Screen  -->
+    <dimen name="resultBoxPadding">30dp</dimen>">
+
+    <dimen name="resultTextSize">22sp</dimen>">
+    <dimen name="resultLossWinTextSize">30sp</dimen>">
+    <dimen name="resultButtonSize">125dp</dimen>">
+
+    <!--  Common  -->
+    <dimen name="commonMarginBottom">15dp</dimen>">
+
 
 
 </resources>

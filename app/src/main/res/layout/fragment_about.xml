@@ -7,18 +7,18 @@
     android:paddingHorizontal="20dp"
     android:paddingTop="20dp"
     android:background="@color/app_background"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.AboutFragment">
 
 
     <LinearLayout
+        android:paddingBottom="50dp"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <TextView
             android:textAlignment="textStart"
-            android:text="About Quiz Master App"
+            android:text="@string/about_quiz_master_app"
             android:textSize="@dimen/commonTitle"
             android:textStyle="bold"
             android:textColor="@color/purple_700"
@@ -28,7 +28,7 @@
         <Button
             android:textAllCaps="false"
             android:id="@+id/clickContactID"
-            android:text="Contact Us"
+            android:text="@string/contact_us"
             android:textSize="@dimen/aboutButton"
             android:textAlignment="textStart"
             android:drawablePadding="5dp"
@@ -43,7 +43,7 @@
             android:textSize="@dimen/aboutButton"
             android:textAllCaps="false"
             android:id="@+id/clickAboutID"
-            android:text="About Us"
+            android:text="@string/about_us"
             android:textAlignment="textStart"
             android:drawablePadding="5dp"
             android:drawableLeft="@drawable/about_us_white"
@@ -57,7 +57,7 @@
             android:textSize="@dimen/aboutButton"
             android:textAllCaps="false"
             android:id="@+id/clickPrivacyID"
-            android:text="Privacy Policy"
+            android:text="@string/privacy_policy"
             android:textAlignment="textStart"
             android:drawablePadding="5dp"
             android:drawableLeft="@drawable/privacy_tip_white"
@@ -71,7 +71,7 @@
             android:textSize="@dimen/aboutButton"
             android:textAllCaps="false"
             android:id="@+id/clickTermConditionID"
-            android:text="Term &amp; Conditions"
+            android:text="@string/term_amp_conditions"
             android:textAlignment="textStart"
             android:drawablePadding="5dp"
             android:drawableLeft="@drawable/privacy_tip_white"
@@ -85,7 +85,7 @@
             android:textSize="@dimen/aboutButton"
             android:textAllCaps="false"
             android:id="@+id/clickRateID"
-            android:text="Rate Us"
+            android:text="@string/rate_us"
             android:textAlignment="textStart"
             android:drawablePadding="5dp"
             android:drawableLeft="@drawable/star_rate_24_white"
@@ -98,7 +98,7 @@
         <Button
             android:textSize="@dimen/aboutButton"
             android:id="@+id/clickShareID"
-            android:text="Share App"
+            android:text="@string/share_app"
             android:textAllCaps="false"
             android:textAlignment="textStart"
             android:drawablePadding="5dp"
